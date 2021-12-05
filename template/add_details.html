@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: pink;
+}
+.container {
+    padding: 50px;
+  background-color: black;
+}
+
+input[type=text], input[type=password], textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: orange;
+  outline: none;
+}
+ div {
+            padding: 10px 0;
+         }
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+  <div class="container">
+    <center> <h1 style="font-size:60px;">ADD DETAILS</h1></center>
+  <hr>
+ <h1> <label> <b>Name</b> <b>:{{ pr.name}}</b> </label></h1>
+
+<label>
+    <h1>
+  <b>
+Date
+    </b>
+        </h1>
+</label>
+<input type="date" name="date" placeholder="date" size="10" required/>
+
+
+<label>
+  <b>
+      <h>
+Number 1
+          </h>
+    </b>
+</label>
+<input type="text" name="number1" placeholder="number1" size="10" required>
+
+<label>
+    <h1>
+  <b>
+Number 2
+    </b>
+        </h1>
+</label>
+<input type="text" name="number2" placeholder="number2" size="10" required>
+
+
+<label>
+    <h1>
+  <b>
+Number 3
+    </b>
+        </h1>
+</label>
+<input type="text" name="number3" placeholder="number3" size="10" required>
+
+
+    <button type="submit" class="registerbtn">ADD</button>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}
